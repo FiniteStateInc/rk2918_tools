@@ -114,8 +114,8 @@ int unpack_rom(const char* filepath, const char* dstfile)
 	}
 	printf("OK\n");
 
-	//export_data(loader_filename, rom_header.loader_offset, rom_header.loader_length, fp);
-	export_data(dstfile, rom_header.image_offset, rom_header.image_length, fp);
+	export_data("loader.img", rom_header.loader_offset, rom_header.loader_length, fp);
+	export_data("update.img", rom_header.image_offset, rom_header.image_length, fp);
 
 	fclose(fp);
 	return 0;
